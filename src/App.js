@@ -1,8 +1,24 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useState } from "react";
+import { Form_input, Item } from "./components";
 
 function App() {
-  return <div className="App"></div>;
+  const [info, setInfo] = useState([]);
+
+  const addInfo = (inputObject) => {
+    setInfo((prevArray) => {
+      return [...prevArray, inputObject];
+    });
+  };
+
+  return (
+    <div className="App">
+      <Form_input addInfo={addInfo} />
+
+      {info.map((item, index) => (
+        <Item key={index} name={item.name} age={item.age} />
+      ))}
+    </div>
+  );
 }
 
 export default App;
