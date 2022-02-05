@@ -32,31 +32,34 @@ export const Form_input = ({ addInfo }) => {
 
   return (
     <Form_styles>
-      <div
-        onClick={warningHandler}
-        className={`warning ${warning && "active"}`}
-      >
+      <div className="wrapper">
+        <form onSubmit={formClickHandler}>
+          <input
+            onChange={nameHandler}
+            value={name}
+            type="text"
+            placeholder="Enter your name"
+          />
+
+          <input
+            onChange={ageHandler}
+            value={age}
+            type="number"
+            placeholder="Enter your age"
+          />
+
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <div className={`warning ${warning && "active"}`}>
+        <div className="warning_wrapper" onClick={warningHandler}></div>
+
         <div className="warning__div">
           <h3>Your age is less than 1. Try again. Your input is {age}.</h3>
           <button onClick={warningHandler}>OK</button>
         </div>
       </div>
-
-      <form onSubmit={formClickHandler}>
-        <input
-          onChange={nameHandler}
-          value={name}
-          type="text"
-          placeholder="Enter your name"
-        />
-        <input
-          onChange={ageHandler}
-          value={age}
-          type="number"
-          placeholder="Enter your age"
-        />
-        <button type="submit">Add</button>
-      </form>
     </Form_styles>
   );
 };
