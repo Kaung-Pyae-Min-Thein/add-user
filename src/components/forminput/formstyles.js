@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Form_styles = styled.div`
   box-sizing: border-box;
+  
   .wrapper {
-    margin-top: 5em;
+    margin: 5em auto 2em auto;
     padding: 3em 5em;
-    min-width: 10em;
+    max-width: 20em;
 
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
     border-radius: 2em;
@@ -46,6 +47,13 @@ export const Form_styles = styled.div`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      padding: 2em;
+      border-radius: 30px;
 
       background: white;
     }

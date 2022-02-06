@@ -6,7 +6,7 @@ function App() {
 
   const addInfo = (inputObject) => {
     setInfo((prevArray) => {
-      return [...prevArray, inputObject];
+      return [inputObject, ...prevArray];
     });
   };
 
